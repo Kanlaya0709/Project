@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/zoneFragment">
+
+    <fragment
+        android:id="@+id/zoneFragment"
+        android:name="com.example.thailandtourisum.zoneFragment"
+        android:label="zoneFragment" >
+        <action
+            android:id="@+id/action_zoneFragment_to_provinceFragment"
+            app:destination="@id/provinceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/provinceFragment"
+        android:name="com.example.thailandtourisum.provinceFragment"
+        android:label="provinceFragment" >
+        <action
+            android:id="@+id/action_provinceFragment_to_tourisumFragment"
+            app:destination="@id/tourisumFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tourisumFragment"
+        android:name="com.example.thailandtourisum.tourisumFragment"
+        android:label="tourisumFragment" />
+    <fragment
+        android:id="@+id/AboutFragment"
+        android:name="com.example.thailandtourisum.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+</navigation>
