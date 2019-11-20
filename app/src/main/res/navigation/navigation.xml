@@ -20,6 +20,9 @@
         <action
             android:id="@+id/action_provinceFragment_to_tourisumFragment"
             app:destination="@id/tourisumFragment" />
+        <argument
+            android:name="zone"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/tourisumFragment"

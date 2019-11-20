@@ -1,7 +1,6 @@
 package com.example.thailandtourisum
 
 
-import android.database.DatabaseUtils
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
@@ -17,6 +16,8 @@ import timber.log.Timber
  */
 class zoneFragment : Fragment() {
 
+    lateinit var zone: String
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
@@ -25,15 +26,18 @@ class zoneFragment : Fragment() {
             ,R.layout.fragment_zone,container,false)
 
         binding.northernButton.setOnClickListener{ view ->
-            view.findNavController().navigate(R.id.action_zoneFragment_to_provinceFragment)
+            zone ="ภาคเหนือ"
+            view.findNavController().navigate(zoneFragmentDirections.actionZoneFragmentToProvinceFragment(zone))
+//            view.findNavController().navigate(R.id.action_zoneFragment_to_provinceFragment)
 
             var alert:Int = Toast.LENGTH_SHORT;
-            var toast = Toast.makeText(context,"ยินดีต้อนรับสู่ภาคเหนือ",alert)
+            var toast = Toast.makeText(context,"ยินดีต้อนรับสู่ภาคเหนือ +${zone}",alert)
 
             toast.show()}
 
         binding.northeasternButton.setOnClickListener{ view ->
-                view.findNavController().navigate(R.id.action_zoneFragment_to_provinceFragment)
+            zone ="ภาคตะวันออกเฉียงเหนือ"
+            view.findNavController().navigate(zoneFragmentDirections.actionZoneFragmentToProvinceFragment(zone))
 
             var alert:Int = Toast.LENGTH_SHORT;
             var toast = Toast.makeText(context,"ยินดีต้อนรับสู่ภาคตะวันออกเฉียงเหนือ",alert)
@@ -41,7 +45,8 @@ class zoneFragment : Fragment() {
             toast.show()}
 
         binding.southernButton.setOnClickListener{ view ->
-            view.findNavController().navigate(R.id.action_zoneFragment_to_provinceFragment)
+            zone ="ภาคเใต้"
+            view.findNavController().navigate(zoneFragmentDirections.actionZoneFragmentToProvinceFragment(zone))
 
             var alert:Int = Toast.LENGTH_SHORT;
             var toast = Toast.makeText(context,"ยินดีต้อนรับสู่ภาคเใต้",alert)
@@ -49,7 +54,8 @@ class zoneFragment : Fragment() {
             toast.show()}
 
         binding.centralButton.setOnClickListener{ view ->
-            view.findNavController().navigate(R.id.action_zoneFragment_to_provinceFragment)
+            zone ="ภาคกลาง"
+            view.findNavController().navigate(zoneFragmentDirections.actionZoneFragmentToProvinceFragment(zone))
 
             var alert:Int = Toast.LENGTH_SHORT;
             var toast = Toast.makeText(context,"ยินดีต้อนรับสู่ภาคกลาง",alert)
@@ -57,7 +63,8 @@ class zoneFragment : Fragment() {
             toast.show()}
 
         binding.easterButton.setOnClickListener{ view ->
-            view.findNavController().navigate(R.id.action_zoneFragment_to_provinceFragment)
+            zone ="ภาคตะวันออก"
+            view.findNavController().navigate(zoneFragmentDirections.actionZoneFragmentToProvinceFragment(zone))
 
             var alert:Int = Toast.LENGTH_SHORT;
             var toast = Toast.makeText(context,"ยินดีต้อนรับสู่ภาคตะวันออก",alert)

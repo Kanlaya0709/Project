@@ -23,6 +23,9 @@ class provinceFragment : Fragment() {
         // Inflate the layout for this fragment
         val binding = DataBindingUtil.inflate<FragmentProvinceBinding>(inflater
             ,R.layout.fragment_province,container,false)
+        val args=provinceFragmentArgs.fromBundle(arguments!!)
+
+        binding.button.text = args.zone
 
         binding.button.setOnClickListener{ view ->
             view.findNavController().navigate(R.id.action_provinceFragment_to_tourisumFragment)
